@@ -1,3 +1,3 @@
-module github.com/holmes89/hello-api
+module github.com/saveliy-kremen/hello-api
 
 go 1.17

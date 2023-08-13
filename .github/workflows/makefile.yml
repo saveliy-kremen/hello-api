@@ -35,7 +35,7 @@ jobs:
     - name: Copy Files
       run: |
         mkdir reports
-        cp cover.xhtml reports/.
+        cp cover.html reports/.
 
     - name: Archive
       uses: actions/upload-artifact@v2

@@ -135,5 +135,6 @@ jobs:
           entry_point: Translate
           runtime: go116
           project_id: hello-api-395906
+          service_account_email: hello-api@hello-api-395906.iam.gserviceaccount.com
       - id: test
-        run: curl "${{ steps.deploy.outputs.url }}/hello"
+        run: curl "${{ steps.deploy.outputs.url }}/hello" 

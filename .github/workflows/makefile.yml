@@ -9,7 +9,8 @@ on:
 jobs:
   test:
     needs:
-      - format-check 
+      - format-check
+      - vet
     name: Test Application
     runs-on: ubuntu-latest 
     steps:
@@ -44,9 +45,6 @@ jobs:
       with:
         name: reports
         path: reports
-
-    - name: Vet
-      run: go vet ./...
 
   build:
     name: Build App
@@ -125,6 +123,9 @@ jobs:
 
       - name: Check out code into the Go module directory
         uses: actions/checkout@v2
+
+      - name: Vet
+        run: go vet ./...
 
   # deploy-function:
   #   name: Deploy FaaS

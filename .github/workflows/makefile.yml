@@ -136,4 +136,4 @@ jobs:
           runtime: go116
           project_id: hello-api-395906
       - id: test
-        run: curl "${{ steps.deploy.outputs.url }}/hello" 
+        run: curl "${{ steps.deploy.outputs.url }}/hello"

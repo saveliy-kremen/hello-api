@@ -11,6 +11,7 @@ jobs:
     needs:
       - format-check
       - vet
+      - lint 
     name: Test Application
     runs-on: ubuntu-latest 
     steps:
@@ -126,6 +127,14 @@ jobs:
 
       - name: Vet
         run: go vet ./...
+
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Lint
+        uses: golangci/golangci-lint-action@v2 
 
   # deploy-function:
   #   name: Deploy FaaS

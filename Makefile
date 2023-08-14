@@ -34,3 +34,15 @@ report:
 
 check-format:
 	test -z $$(go fmt ./...) 
+
+install-lint:
+ 	sudo curl -sSfL \
+ 	https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh\
+ | 	sh -s -- -b $$(go env GOPATH)/bin v1.41.1
+
+static-check:
+ 	golangci-lint run
+
+copy-hooks:
+ 	chmod +x scripts/hooks/* ❶
+ 	cp -r scripts/hooks .git/.

@@ -114,7 +114,7 @@ jobs:
           asset_content_type: application/octet-stream
 
   vet:
-    name: Check formatting
+    name: Check semantic
     runs-on: ubuntu-latest
     steps:
       - name: Set up Go 1.x
